@@ -1,0 +1,30 @@
+.drums{
+    --square-size:5rem;
+    margin-top: 40vh;
+    display: flex;
+    justify-content: center;
+}
+.drums>*{
+    
+    border: rgb(255, 255, 35) 2px solid;
+    border-radius: 0.5rem;
+    transition: 0.05s;
+    /* padding: 2rem; */
+    width: var(--square-size);
+    height: var(--square-size);
+    text-align: center;
+    padding-top: 0.3rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.drums .drum.active{
+    transition: 0.03s;
+    /* border: #fab solid 10px; */
+    box-shadow: 4px 4px 10px #fab;
+}
+.drums>:not(:last-child){
+    margin-right: 1rem;
+
+
+}
