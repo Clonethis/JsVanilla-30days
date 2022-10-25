@@ -24,16 +24,16 @@ var Keys = {
   s: 10,
 };
 var audioPlaylist = new Array(
-  "./materials/music/1.mp3",
-  "./materials/music/2.mp3",
-  "./materials/music/3.mp3",
-  "./materials/music/4.mp3",
-  "./materials/music/5.mp3",
-  "./materials/music/6.mp3",
-  "./materials/music/7.mp3",
-  "./materials/music/8.mp3",
-  "./materials/music/9.mp3",
-  "./materials/music/10.mp3"
+  "./music/1.mp3",
+  "./music/2.mp3",
+  "./music/3.mp3",
+  "./music/4.mp3",
+  "./music/5.mp3",
+  "./music/6.mp3",
+  "./music/7.mp3",
+  "./music/8.mp3",
+  "./music/9.mp3",
+  "./music/10.mp3"
 );
 const testFolder = "./materials/music";
 
