@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,900;1,100&display=swap');
+    </style>
+    <title>Play with js and css</title>
+    <link rel="stylesheet" href="./play.css">
+    <link rel="stylesheet" href="../index.css">
+    
+</head>
+<body>
+    <h1>Let's update CSS variables with <span class="hl">JS</span></h1>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="30" data-sizing="px">
+
+        <label for="blur">Blur:</label><input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+        <label for="base">Base color:</label><input type="color" name="base" value="#fab">
+        <img src="https://images.unsplash.com/photo-1666473574287-0424cc6d0946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Woman holding teacup" >
+    </div>
+    <script src="play.js"></script>
+</body>
+</html>
