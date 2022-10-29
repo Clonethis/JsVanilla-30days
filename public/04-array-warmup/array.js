@@ -73,19 +73,24 @@ $pArray[4].innerHTML = inventors
 // Todo 6: write other TODO'S
 
 // Todo 7 : Write out table of boulevard in Paris having 'de' anywhere in the name:
+
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-const Http = new XMLHttpRequest();
-const url = 'https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris';
-Http.open("GET",url);
-Http.send();
-Http.onreadystatechange = function(){
-  if(this.readyState==4&& this.status==200){
-    console.log(Http.responseText);
-  }else{
-    console.log(this.status);
+const invocation = new XMLHttpRequest();
+const url = "https://bar.other/resources/credentialed-content/";
+
+function callOtherDomain() {
+  if (invocation) {
+    invocation.open("GET", url, true);
+    invocation.withCredentials = true;
+    invocation.onreadystatechange = someHandler;
+    invocation.send();
   }
 }
 
+
+function someHandler(event){
+  console.log(event)
+}
 fetch(url).then(data=>{return data.text}).then(res=>{console.log("res"+res)});
 
 document.querySelectorAll(".mw-category-group li a");
