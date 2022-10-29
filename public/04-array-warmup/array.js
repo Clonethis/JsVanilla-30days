@@ -125,5 +125,39 @@ const sorted = men.sort((a, b) => {
   }
 });
 // END my approach
+const alpha = people.sort((lastOne, nextOne) => {
+  const [aLast, aFirst] = lastOne.split(", ");
+  const [bLast, bFirst] = nextOne.split(", ");
+  return aLast > bLast ? 1 : -1;
+});
 
-// Todo 9: Sum up instances of each of these things from array below
+// Todo 9: Sum/count up instances of each of these things from array below
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "pogo stick",
+  "truck",
+];
+
+const transportation = data.reduce(function (obj, item) {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, {});
+
+// car: 0,
+//   walk: 0,
+//   truck: 0,
