@@ -6,7 +6,7 @@
 body{
     --main-color: rgb(223, 220, 19);
         /* margin:0; */
-        margin: 2rem 1rem 0 1rem;
+
     min-height: 100vh;
     background-color: rgb(21, 21, 21);
     color: aliceblue;
