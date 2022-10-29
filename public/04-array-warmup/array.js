@@ -157,7 +157,7 @@ const transportation = data.reduce(function (obj, item) {
   obj[item]++;
   return obj;
 }, {});
-
+console.log(transportation);
 // car: 0,
 //   walk: 0,
 //   truck: 0,
