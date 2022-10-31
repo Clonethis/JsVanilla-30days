@@ -24,7 +24,6 @@ const everybodyAdult = people.every((person) => {
 console.log({ isAdult }, { everybodyAdult });
 
 // TODO2: find and findIndex
-
 // Searches array and returns first occurence which is valid
 const found = comments.find((comment) => comment.text.includes("ra"));
 
