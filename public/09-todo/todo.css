@@ -45,3 +45,18 @@ input {
     border-left: 2px solid rgb(111, 36, 36);
     display: inline-block;
 }
+.todo .ui-selecting {
+    background: #FECA40;
+}
+
+.todo .ui-selected {
+    background: #F39814;
+    color: #fab;
+}
+
+.todo.finished {
+    /* background-color: #fab; */
+    text-decoration: line-through;
+    opacity: 0.4;
+
+}
