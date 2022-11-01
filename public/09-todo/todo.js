@@ -1,9 +1,9 @@
 const $todoList = [... document.getElementsByClassName('todo')];
 
 $todoList.forEach(todo => {
+    todo.addEventListener('click',checkTodo);
     todo.addEventListener('mousedown',(event)=>{switchCheck(event.target,event.type)});
     todo.addEventListener('mouseup',(event)=>{switchCheck(event.target,event.type)});
-    // todo.addEventListener('click',checkTodo);
     // todo.addEventListener('mouseup',log);
 });
 // .srcElement.parentElement()
@@ -20,36 +20,33 @@ function checkTodo(e) {
     }else{
         e.target.className = "todo";
         return check.checked=false;
-        // checkState=true;
-        
+        // checkState=true;   
     }
-    
-    // console.log();
 }
 function checkDirectTodo(todoDiv){
     
     console.log("YouDiv");
     console.log();
-    todoDiv.firstElementChild.checked =true;
+    todoDiv.firstElementChild.checked =!todoDiv.firstElementChild.checked;
 }
 
 let [startElement,finishElement]=" ";
 function switchCheck(target,flag) {
-    // console.log(target);
+
     console.log(target.attributes.class)
 
-    if(target.attributes.class===undefined){
+    if(target.attributes[0].type==='checkbox'){
         console.log("I am runnig for target: ",{target})
-        // target.firstElementChild.attributes.type!='checkbox'
         target= target.parentNode.parentElement;
     }else{
         target
     }
     if(flag==='mousedown'){
-        startElement = target.firstElementChild;
-        console.log(flag);
+        console.log("mousedown "+flag);
+        startElement = target;
     } 
     if(flag==='mouseup'){
+        console.log("Mouseup "+flag);
         finishElement = target;
         console.log(flag);
     }
@@ -58,36 +55,47 @@ function switchCheck(target,flag) {
     }
     console.log({startElement,finishElement});
     // continue in 
-    if(startElement === '<input type="checkbox">' && finishElement === '<input type="checkbox">' ){
-        console.log("Switch"+startElement+" "+finishElement)
-        console.log("Heey switch runs");
-        // [startElement,finishElement]="";
+    try{
+        if(finishElement!=undefined){
+            if(startElement.classList[0]==="todo" && finishElement.classList[0]==="todo" ){
+                console.log("Switch"+startElement+" "+finishElement)
+                console.log("Heey switch runs");
+                // [startElement,finishElement]="";
+        
+                let startContinue = false;
+                for (let i =0; i< $todoList.length; i++) {
 
-        let startContinue = false;
-        for (let i =0; i< $todoList.length; i++) {
-            let todo = $todoList[i];
-            if ((todo === startElement || todo === finishElement )) {
-                startContinue = true;
-                checkDirectTodo(todo);
-                console.log("Setting true"+startContinue);
-                continue;
-                
-            }else if((startContinue)){
-                
-                console.log("finishing loop");
-                checkDirectTodo(todo);
+                    let todo = $todoList[i];
+                    console.log(todo);
+                    if ((todo === startElement || todo === finishElement )) {
+                        if(startContinue){
+                            checkDirectTodo(todo);
+                            break;
+                        }
+                        startContinue = true;
+                        checkDirectTodo(todo);
+                        console.log("Setting: "+startContinue);
+                        continue;
+                        
+                    }
+                    if((startContinue)){
+                        
+                        console.log("finishing loop");
+                        checkDirectTodo(todo);
+                }
+                }
             }
-            else if(todo === startElement || todo === finishElement ){
-                startContinue = false;
-                break;
-
-            }
-    
         }
+    }catch{
+        setTimeout((e)=>console.log("wait"),100)
     }
+    
         // if(todo==startElement){
         //     checkDirectTodo(todo);
         // }
         
+    
+}
+()=>{
     
 }
