@@ -1,0 +1,156 @@
+* {
+
+    transition: all 0.2s;
+}
+
+body {
+
+    transition-duration: 4s;
+    --basic-border-rounding: 0.2rem;
+    background: radial-gradient(#e72670, #b806af, rgb(41, 2, 104), #75050d);
+    background-size: 500% 500%;
+    animation: gradient 80s ease-in infinite alternate-reverse;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 20%;
+    }
+
+    50% {
+        background-position: 80% 30%;
+    }
+
+    80% {
+        background-position: 80% 50%;
+    }
+
+    100% {
+        background-position: 80% 80%;
+    }
+}
+
+.player {
+    transition: all 0.4s;
+    margin: auto;
+    margin-top: 10vh;
+    width: 70vw;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+video.player__video.viewer {
+
+    position: relative;
+    width: 100%;
+    display: block;
+    z-index: 0;
+
+}
+
+.player__controlls>* {
+    /* margin-top: 0.3rem; */
+    width: 100%;
+
+}
+
+.player__controlls {
+
+    position: absolute;
+    bottom: -2rem;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.player:hover .player__controlls {
+    background-color: rgb(19, 19, 19);
+    border-radius: var(--basic-border-rounding) var(--basic-border-rounding) 0 0;
+    /* bottom: 0.5rem; */
+    bottom: 0;
+}
+
+.player:hover .player__controlls .progress {
+    margin-top: 0;
+    padding: 0.3rem;
+    padding-left: 0.1rem;
+    margin-bottom: 0.6rem;
+    border-radius: var(--basic-border-rounding);
+
+}
+
+.player:hover .player__controlls .progress .progress__filled {
+    top: 0.2rem;
+}
+
+.player .player__controlls .progress:hover {
+    padding: 0.7rem 0;
+
+}
+
+.player .player__controlls .progress:hover .progress__filled {
+    top: 1rem;
+}
+
+.progress {
+
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    padding-top: 1rem;
+    height: 0.2rem;
+
+    position: relative;
+    background-color: rgba(60, 58, 58, 0.607);
+    cursor: pointer;
+}
+
+.progress__filled {
+    z-index: 2;
+    /* height: 1rem; */
+    border-radius: var(--basic-border-rounding);
+    height: inherit;
+    position: absolute;
+    top: 0;
+    width: 1%;
+    background-color: var(--main-color);
+}
+
+
+.options__row {
+    height: 1.4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player__button {
+    background-color: transparent;
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+
+    height: fit-content;
+    text-anchor: middle;
+    margin-top: 0;
+    padding: 0.5 0.5rem;
+    border-radius: 5px;
+    width: 2rem;
+    /* border: 1.5px solid var(--main-color); */
+
+}
+
+
+
+.player__button.playing::after {
+    content: "⏸";
+    font-size: 1rem;
+}
+
+.player__button.stopped::after {
+
+    content: "►";
+}

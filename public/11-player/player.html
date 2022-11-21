@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,900;1,100&display=swap');
+    </style>
+    <title>Custom player</title>
+
+
+    <link rel="stylesheet" href="./player.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./track.css">
+
+    <script src="../index.js"></script>
+
+</head>
+
+<body>
+        <h1>Custom player:</h1>
+        <div class="player">
+            <video src="./source/video.mp4" class="player__video viewer" autoplay></video>
+            <div class="player__controlls">
+                <div class="progress">
+                    <div class="progress__filled"></div>
+                </div>
+                
+                <div class="options__row">
+                    <button class="player__button stopped" title="Toggle Play"></button><input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1"><input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+                </div>
+            </div>
+        </div>
+        <script src="./player.js"></script>
+
+</body>
+</html>
