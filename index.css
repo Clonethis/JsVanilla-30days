@@ -7,8 +7,9 @@ body{
     --main-color: rgb(223, 220, 19);
         /* margin:0; */
     --nice-animating-function: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+    --background-color: rgb(21, 21, 21);
+        --color: aliceblue;
     min-height: 100vh;
-    background-color: rgb(21, 21, 21);
-    color: aliceblue;
+    background-color: var(--background-color);
+        color: var(--color);
 }
